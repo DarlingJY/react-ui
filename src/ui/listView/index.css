@@ -1,0 +1,23 @@
+.container{
+  height: calc(100vh);
+  font-size:50px;
+}
+
+:global(.am-list-body){
+  background-color: transparent!important
+}
+:global(.am-pull-to-refresh-indicator){
+  display: none!important
+}
+
+:global(.am-list-view-scrollview){
+  margin:40px 0 200px!important;
+  border:none!important;
+}
+
+.separator{
+  height:40px
+}
+.noMargin{
+  height:0!important;
+}

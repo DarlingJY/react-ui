@@ -1,0 +1,41 @@
+.label{
+  position:absolute;
+  top:-7%;
+  left:5%;
+  border:1;
+  border-radius:20px;
+  padding:15px;
+  font-size:36px;
+}
+.select10{
+  color:#ff8928;
+  background:#fff3e9;
+  border:1px solid #ff8928;
+}
+.select20{
+  color:#ff5722;
+  background:#ffeee8;
+  border:1px solid #ff5722;
+}
+.select30{
+  color:#4caf5a;
+  background:#edf7ed;
+  border:1px solid #4caf5a;
+}
+/* 预约成功 预约完成 预约取消 */
+
+.record10{
+  color:#4caf5a;
+  background:#edf7ed;
+  border:1px solid #4caf5a;
+}
+.record20{
+  color:#2196f3;
+  background:#e8f4fe;
+  border:1px solid #2196f3;
+}
+.record30{
+  color:#999;
+  background:#f2f2f2;
+  border:1px solid #999;
+}

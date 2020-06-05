@@ -1,0 +1,50 @@
+.panel-bg{
+  width:48%;
+  background:#fff;
+  border-radius: 14px;
+  padding:50px 0;
+  text-align: center;
+}
+
+.panel-bg p{
+  font-size: 38px;
+  margin-top:40px;
+}
+
+.panel-bg .panel-icon{
+  display: inline-block;
+  width:120px;
+  height:120px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 120px;
+}
+.panel-bg .panel-icon i{
+  font-size:50px
+}
+
+
+.panel-bg .panel-icon.panel-icon-primary{
+  background: #e8f4fe;
+}
+
+.panel-bg .panel-icon.panel-icon-primary i{
+  color:#2196f3;
+}
+
+.panel-bg .panel-icon.panel-icon-org{
+  background: #fff3e9;
+}
+
+.panel-bg .panel-icon.panel-icon-org i{
+  color:#ff8928;
+}
+
+.panel-bg .panel-icon.panel-icon-green{
+  background: #f3f9ed;
+}
+
+.panel-bg .panel-icon.panel-icon-green i{
+  color:#8bc34a;
+}
+

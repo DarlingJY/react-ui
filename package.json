@@ -1,0 +1,32 @@
+{
+  "name": "react-ui-mobile",
+  "version": "0.1.1",
+  "private": true,
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "history": "^4.6.3",
+    "kara-react-components-mobileweb": "0.0.108",
+    "kara-reactutil-mobileweb": "^0.0.7",
+    "lodash": "^4.17.4",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.0",
+    "promise": "^8.0.3",
+    "prop-types": "^15.5.10",
+    "rc-form": "^2.4.11",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "eslint-config-airbnb": "^15.0.1",
+    "kara-react-scripts": "^0.0.7"
+  },
+  "scripts": {
+    "start": "cross-env PORT=3000  react-scripts start",
+    "build": "cross-env react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

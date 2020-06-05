@@ -1,0 +1,67 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-11-21 09:23:03
+ * @LastEditTime: 2020-06-04 11:19:39
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /kara-order-car-mobileweb/public/index.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" >
+    <meta name="theme-color" content="#000000">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <title>宿舍签到</title>
+    <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+    <!-- 引入 Promise 的 fallback 支持 (部分安卓手机不支持 Promise) -->
+    <script>
+      if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body);
+        }, false);
+      }
+      if(!window.Promise) {
+        document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+      }
+    </script>
+    <style>
+        body {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            user-select: none;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            /*-webkit-touch-callout: none;*/
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script>
+    document.body.addEventListener('focusin', () => {
+        //软键盘弹出的事件处理
+        // $('html, body').animate({scrollTop:0}, 'slow');
+    });
+    document.body.addEventListener('focusout', () => {
+        //软键盘收起的事件处理
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        // $('html, body').animate({scrollTop: 0}, 'slow');
+    });
+    
+</script>
+</html>
