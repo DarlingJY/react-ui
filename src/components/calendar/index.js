@@ -29,6 +29,7 @@ export default class Calendar extends Component {
   constructor(props) {
     super(props)
     this.lastMonth = ''//最下面的月份
+    this.count = 0
     this.state = {
       months: [],
 
@@ -40,7 +41,11 @@ export default class Calendar extends Component {
     this.setState({ months: [...(this.getData())] })
     let div = document.getElementById('container')
     let more = () => {
-      if(minDate&&sort === '-'&&moment(this.lastMonth).format('YYYY-MM')<moment(minDate).format('YYYY-MM')){
+      if(sort === '-'&&minDate&&moment(this.lastMonth).format('YYYY-MM')<moment(minDate).format('YYYY-MM')){
+        div.removeEventListener('scroll',more)
+        return
+      }
+      if(sort === '+'&&maxDate&&moment(this.lastMonth).format('YYYY-MM')>moment(maxDate).format('YYYY-MM')){
         div.removeEventListener('scroll',more)
         return
       }
@@ -54,17 +59,29 @@ export default class Calendar extends Component {
 
   }
 
+  componentWillReceiveProps(next){
+    const {sort='-', minDate,maxDate,selectedValue=[],step=6} = this.props
+    this.lastMonth=''
+    //只走初始化的
+    if(!this.count&&(sort!=next.sort||minDate!=next.minDate||maxDate!=next.maxDate||selectedValue!=next.selectedValue||step!=next.step)){
+      this.setState({ months: [...this.getData(next)] })
+    }
+
+    this.count++
+  }
+
   //获取每次加载数据
-  getData = () => {
-    let date = this.lastMonth ? this.lastMonth : this.props.date
+  getData = (props) => {
+    props = props?props:this.props
+    let date = this.lastMonth ? this.lastMonth : props.date
     const arr = []
-    const { step = 6, sort = '-', selectedValue,minDate,maxDate } = this.props
+    const { step = 6, sort = '-', selectedValue,minDate,maxDate } = props
     for (let i = 0; i < step; i++) {
       let curDate = Month.getMonth(moment(date).format('YYYY-MM-DD'), sort === '-' ? -i : i)
-      if(minDate&&sort === '-'&&moment(this.lastMonth).format('YYYY-MM')<moment(minDate).format('YYYY-MM')){
+      if(sort === '-'&&minDate&&moment(this.lastMonth).format('YYYY-MM')<moment(minDate).format('YYYY-MM')){
         return arr
       }
-      if(maxDate&&sort === '+'&&moment(this.lastMonth).format('YYYY-MM')>moment(maxDate).format('YYYY-MM')){
+      if(sort === '+'&&maxDate&&moment(this.lastMonth).format('YYYY-MM')>moment(maxDate).format('YYYY-MM')){
         return arr
       }
 
@@ -92,9 +109,7 @@ export default class Calendar extends Component {
     return arr
   }
 
-  pullToLoad = () => {
 
-  }
 
   render() {
     return (
