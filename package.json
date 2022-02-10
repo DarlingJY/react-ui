@@ -9,7 +9,7 @@
     "kara-reactutil-mobileweb": "^0.0.7",
     "lodash": "^4.17.4",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "promise": "^8.0.3",
     "prop-types": "^15.5.10",
     "rc-form": "^2.4.11",
